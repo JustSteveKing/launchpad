@@ -19,3 +19,7 @@ A helpful Laravel package to help me get started in Laravel projects quicker.
 - `Portal` - A helper to allow you to interact with the Laravel Database Manager, current methods implemented:
   - `transaction` which will allow you to do Database Transactions easily.
 - `DispatchableCommandBus` - A helper to allow you to dispatch background jobs using the DI container instead of the Facade.
+
+## Traits/Concerns
+
+- `RendersInertiaComponent` - Add this to your Web Controllers, to have access to the underlying Response Factory for Inertia by using `$this->response->render()`.
