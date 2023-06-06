@@ -24,6 +24,12 @@ A helpful Laravel package to help me get started in Laravel projects quicker.
 
 - `RendersInertiaComponent` - Add this to your Web Controllers, to have access to the underlying Response Factory for Inertia by using `$this->response->render()`.
 
+## Contracts
+
+- `SelfRegistersToContainer` - A contract that you can add to a class, which is used for self registration into the DI container for classes.
+- `CacheExpiry` - A contract that we will add to Enums that are related to Cache Expiry times.
+- `CacheKey` - A contract that we will add to Enums that are related to Cache Keys.
+
 ## API Responses
 
 - `MessageResponse` - A response class that will return a response with the key `message`.
