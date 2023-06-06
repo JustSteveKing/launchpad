@@ -20,5 +20,6 @@ final class ModelResponse implements Responsable
     public function __construct(
         public readonly JsonResource $data,
         public readonly Status $status = Status::OK,
-    ) {}
+    ) {
+    }
 }

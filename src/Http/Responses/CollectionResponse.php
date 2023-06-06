@@ -20,5 +20,6 @@ final class CollectionResponse implements Responsable
     public function __construct(
         public readonly AnonymousResourceCollection $data,
         public readonly Status $status = Status::OK,
-    ) {}
+    ) {
+    }
 }

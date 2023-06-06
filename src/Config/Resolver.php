@@ -10,7 +10,8 @@ final readonly class Resolver
 {
     public function __construct(
         private Repository $config,
-    ) {}
+    ) {
+    }
 
     public function string(string $key, null|string $default = null): string
     {

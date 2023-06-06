@@ -10,5 +10,6 @@ trait RendersInertiaComponent
 {
     public function __construct(
         protected readonly ResponseFactory $response,
-    ) {}
+    ) {
+    }
 }

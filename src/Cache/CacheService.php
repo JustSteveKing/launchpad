@@ -13,7 +13,8 @@ final readonly class CacheService
 {
     public function __construct(
         private Repository $repository,
-    ) {}
+    ) {
+    }
 
     public function remember(CacheKey $key, CacheExpiry $expiry, Closure $callback): mixed
     {

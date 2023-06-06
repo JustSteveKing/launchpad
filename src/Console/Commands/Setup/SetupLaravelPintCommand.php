@@ -24,7 +24,7 @@ final class SetupLaravelPintCommand extends Command
             File::put(
                 path: base_path(path: 'pint.json'),
                 contents: File::get(
-                    path: __DIR__ . '/../../../../stubs/pint.json',
+                    path: __DIR__.'/../../../../stubs/pint.json',
                 ),
             );
         } catch (Throwable $exception) {

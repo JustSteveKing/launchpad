@@ -15,7 +15,8 @@ final readonly class Portal
      */
     public function __construct(
         private DatabaseManager $database,
-    ) {}
+    ) {
+    }
 
     /**
      * @param Closure $callback

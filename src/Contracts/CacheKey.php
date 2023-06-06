@@ -10,5 +10,4 @@ namespace JustSteveKing\Launchpad\Contracts;
  */
 interface CacheKey
 {
-    //
 }

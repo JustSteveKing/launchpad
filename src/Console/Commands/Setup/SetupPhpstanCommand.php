@@ -24,7 +24,7 @@ final class SetupPhpstanCommand extends Command
             File::put(
                 path: base_path(path: 'phpstan.neon'),
                 contents: File::get(
-                    path: __DIR__ . '/../../../../stubs/phpstan.neon',
+                    path: __DIR__.'/../../../../stubs/phpstan.neon',
                 ),
             );
         } catch (Throwable $exception) {
