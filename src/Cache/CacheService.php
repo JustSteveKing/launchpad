@@ -5,15 +5,19 @@ declare(strict_types=1);
 namespace JustSteveKing\Launchpad\Cache;
 
 use Closure;
-use Illuminate\Support\Facades\Cache;
+use Illuminate\Contracts\Cache\Repository;
 use JustSteveKing\Launchpad\Contracts\CacheExpiry;
 use JustSteveKing\Launchpad\Contracts\CacheKey;
 
-final class CacheService
+final readonly class CacheService
 {
+    public function __construct(
+        private Repository $repository,
+    ) {}
+
     public function remember(CacheKey $key, CacheExpiry $expiry, Closure $callback): mixed
     {
-        return Cache::remember(
+        return $this->repository->remember(
             key: $key->value,
             ttl: $expiry->value,
             callback: $callback,
