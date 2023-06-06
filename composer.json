@@ -1,0 +1,61 @@
+{
+  "name": "juststeveking/launchpad",
+  "description": "A helpful Laravel package to help me get started in Laravel projects quicker.",
+  "license": "MIT",
+  "authors": [
+    {
+      "role": "Developer",
+      "name": "Steve McDougall",
+      "email": "juststevemcd@gmail.com",
+      "homepage": "https://www.juststeveking.uk/"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "JustSteveKing\\Launchpad\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "JustSteveKing\\Launchpad\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "php": "^8.2"
+  },
+  "require-dev": {
+    "guzzlehttp/guzzle": "^7.5",
+    "laravel/pint": "^1.9",
+    "orchestra/testbench": "^8.5",
+    "pestphp/pest": "^2.5.2",
+    "phpstan/phpstan": "^1.10.14"
+  },
+  "scripts": {
+    "pint": [
+      "./vendor/bin/pint"
+    ],
+    "stan": [
+      "./vendor/bin/phpstan analyse"
+    ],
+    "test": [
+      "./vendor/bin/pest"
+    ]
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "JustSteveKing\\Launchpad\\Providers\\PackageServiceProvider"
+      ]
+    }
+  },
+  "config": {
+    "sort-packages": true,
+    "optimize-autoloader": true,
+    "allow-plugins": {
+      "pestphp/pest-plugin": true,
+      "php-http/discovery": true
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
