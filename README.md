@@ -23,3 +23,9 @@ A helpful Laravel package to help me get started in Laravel projects quicker.
 ## Traits/Concerns
 
 - `RendersInertiaComponent` - Add this to your Web Controllers, to have access to the underlying Response Factory for Inertia by using `$this->response->render()`.
+
+## API Responses
+
+- `MessageResponse` - A response class that will return a response with the key `message`.
+- `ModelResponse` - A response class that accepts an Eloquent Resource class.
+- `CollectionResponse` - A response class that accepts an Eloquent Resource collection class.

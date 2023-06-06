@@ -21,7 +21,8 @@
     }
   },
   "require": {
-    "php": "^8.2"
+    "php": "^8.2",
+    "treblle/treblle-api-tools-laravel": "^0.0.1"
   },
   "require-dev": {
     "guzzlehttp/guzzle": "^7.5",
