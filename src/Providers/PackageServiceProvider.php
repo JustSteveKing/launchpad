@@ -9,6 +9,8 @@ use Illuminate\Support\ServiceProvider;
 use JustSteveKing\Launchpad\Cache\CacheService;
 use JustSteveKing\Launchpad\Config\Resolver;
 use JustSteveKing\Launchpad\Console\Commands\Stubs\StubsPublishCommand;
+use JustSteveKing\Launchpad\Console\Commands\Setup\SetupLaravelPintCommand;
+use JustSteveKing\Launchpad\Console\Commands\Setup\SetupPhpstanCommand;
 use JustSteveKing\Launchpad\Database\Portal;
 use JustSteveKing\Launchpad\Queue\DispatchableCommandBus;
 
@@ -26,6 +28,13 @@ final class PackageServiceProvider extends ServiceProvider implements Deferrable
 
     public function register(): void
     {
+        $this->commands(
+            commands: [
+                SetupPhpstanCommand::class,
+                SetupLaravelPintCommand::class,
+                StubsPublishCommand::class,
+            ],
+        );
         $this->app->singleton(
             abstract: Portal::class,
             concrete: Portal::class,
@@ -42,16 +51,5 @@ final class PackageServiceProvider extends ServiceProvider implements Deferrable
             abstract: CacheService::class,
             concrete: CacheService::class,
         );
-    }
-
-    public function boot(): void
-    {
-        if (! $this->app->runningInConsole()) {
-            $this->commands(
-                commands: [
-                    StubsPublishCommand::class,
-                ],
-            );
-        }
     }
 }
