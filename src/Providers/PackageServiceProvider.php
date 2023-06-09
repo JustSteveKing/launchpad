@@ -8,6 +8,7 @@ use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 use JustSteveKing\Launchpad\Cache\CacheService;
 use JustSteveKing\Launchpad\Config\Resolver;
+use JustSteveKing\Launchpad\Console\Commands\Stubs\StubsPublishCommand;
 use JustSteveKing\Launchpad\Database\Portal;
 use JustSteveKing\Launchpad\Queue\DispatchableCommandBus;
 
@@ -41,5 +42,16 @@ final class PackageServiceProvider extends ServiceProvider implements Deferrable
             abstract: CacheService::class,
             concrete: CacheService::class,
         );
+    }
+
+    public function boot(): void
+    {
+        if (! $this->app->runningInConsole()) {
+            $this->commands(
+                commands: [
+                    StubsPublishCommand::class,
+                ],
+            );
+        }
     }
 }

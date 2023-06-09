@@ -1,0 +1,18 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespace }};
+
+use Closure;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+
+final class {{ class }}
+{
+    public function handle(Request $request, Closure $next): Response|JsonResponse
+    {
+        return $next($request);
+    }
+}
