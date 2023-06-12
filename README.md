@@ -2,6 +2,7 @@
 
 A helpful Laravel package to help me get started in Laravel projects quicker.
 
+This is still a work in progress, so use at your own risk!
 
 ## CLI Commands
 
